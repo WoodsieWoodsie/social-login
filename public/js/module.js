@@ -9,6 +9,6 @@ app.config(function($stateProvider, $urlRouterProvider, $authProvider) {
     .state('login', { url: '/login', templateUrl: 'partials/login.html', controller: 'loginCtrl'})
 
     $authProvider.github({
-      clientId: 'a24f8ae4f7f98525f469'
+      clientId: '38f910775b611cbd28de'
     });
 });

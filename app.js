@@ -8,6 +8,9 @@ var morgan = require('morgan');
 
 var app = express();
 
+var mongoose = require('mongoose');
+mongoose.connect(process.env.MONGOLAB_URI || 'mongodb://localhost/socialLogin');
+
 app.set('view engine', 'jade');
 
 // GENERAL MIDDLEWARE
@@ -18,6 +21,7 @@ app.use(express.static('public'));
 
 // ROUTES
 app.use('/', require('./routes/index'));
+app.use('/auth', require('./routes/auth'));
 
 // 404 HANDLER
 app.use(function(req, res){
